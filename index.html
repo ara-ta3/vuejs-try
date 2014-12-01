@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    </head>
+    <body>
+        <div class="container">
+
+            <!-- Static navbar -->
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Vue Try</a>
+                    </div>
+                </div><!--/.container-fluid -->
+            </div>
+            <div class="row">
+                <div id="demo">
+                    <div class="well">
+                        <h4>メッセージ機能</h4>
+                        <p>UserName: {{user}}</p>
+                    </div>
+                    <input type="text" id="textbox" v-model="text" placeholder="今なにしてる？">
+                    <button class="btn btn-primary" v-on="click: execute">実行</button>
+
+                    <h4>最終メッセージ</h4>
+                    <p>
+                    {{lastMessage}}
+                    </p>
+                    <ul class="list-unstyled">
+                        <li v-repeat="results" class="text-info">
+                        <div class="alert alert-info">
+                            {{time}} : {{user}} < {{text}}
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> <!-- /container -->
+    </body>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="bower_components/vue/dist/vue.js"></script>
+    <script src="./chat_client.js"></script>
+</html>
